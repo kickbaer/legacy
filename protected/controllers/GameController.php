@@ -32,7 +32,7 @@ class GameController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                'actions'=>array('create','update','dnd'),
+                                'actions'=>array('create','update','dnd','mobile'),
                                 'users'=>array('@'),
                         ),
 
@@ -54,10 +54,29 @@ class GameController extends Controller
         {
                 // renders the view file 'protected/views/game/dnd.php'
                 // using the default layout 'protected/views/layouts/main.php'
-		$this->layout='column1';
+								$this->layout='column1';
                 $this->render('dnd');
         }
 
+	public function actionMobile()
+							{
+								$model=new Game;
+
+								// Uncomment the following line if AJAX validation is needed
+								// $this->performAjaxValidation($model);
+
+								if(isset($_POST['Game']))
+								{
+									$model->attributes=$_POST['Game'];
+									if($model->save())
+										$this->redirect(array('view','id'=>$model->id));
+								}
+
+								$this->layout='mobile';
+								$this->render('create',array(
+									'model'=>$model,
+								));
+							}
 
 	/**
 	 * Displays a particular model.

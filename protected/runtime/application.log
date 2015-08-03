@@ -2441,3 +2441,127 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/index.php?r=player/update&id=10
 ---
+2015/08/03 09:49:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [14] unable to open database file' in /home/www/itos/php/yii/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /home/www/itos/php/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /home/www/itos/php/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /home/www/itos/php/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /home/www/itos/php/yii/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /home/www/itos/php/protected/views/site/groups.php(6): CModule->__get('db')
+#5 /home/www/itos/php/yii/framework/web/CBaseController.php(126): require('/home/www/itos/...')
+#6 /home/www/itos/php/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/www/itos/...', NULL, true)
+#7 /home/www/itos/php/yii/framework/web/CController.php(869): CBaseController->renderFile('/home/www/itos/...', NULL, true)
+#8 /home/www/itos/php/yii/framework/web/CController.php(782): CController->renderPartial('groups', NULL, true)
+#9 /home/www/itos/php/protected/controllers/SiteController.php(57): CController->render('groups')
+#10 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionGroups()
+#11 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /home/www/itos/php/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /home/www/itos/php/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): CController->run('groups')
+#15 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/groups')
+#16 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#17 /home/www/itos/php/public/index.php(19): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/groups
+HTTP_REFERER=http://kick.aiur.str.redhat.com/index.php?r=site/index
+---
+2015/08/03 09:51:38 [error] [php] in_array() expects parameter 2 to be array, null given (/home/www/itos/php/protected/views/site/groups.php:35)
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /home/www/itos/php/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /home/www/itos/php/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /home/www/itos/php/protected/controllers/SiteController.php(57): SiteController->render()
+#4 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionGroups()
+#5 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/www/itos/php/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /home/www/itos/php/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/www/itos/php/public/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/groups
+in /home/www/itos/php/protected/views/site/groups.php (35)
+in /home/www/itos/php/protected/controllers/SiteController.php (57)
+in /home/www/itos/php/public/index.php (19)
+2015/08/03 09:51:48 [error] [php] in_array() expects parameter 2 to be array, null given (/home/www/itos/php/protected/views/site/index.php:12)
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /home/www/itos/php/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /home/www/itos/php/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /home/www/itos/php/protected/controllers/SiteController.php(50): SiteController->render()
+#4 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/www/itos/php/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /home/www/itos/php/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/www/itos/php/public/index.php(19): CWebApplication->run()
+REQUEST_URI=/
+in /home/www/itos/php/protected/views/site/index.php (12)
+in /home/www/itos/php/protected/controllers/SiteController.php (50)
+in /home/www/itos/php/public/index.php (19)
+2015/08/03 09:55:58 [error] [php] in_array() expects parameter 2 to be array, null given (/home/www/itos/php/protected/views/site/index.php:12)
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /home/www/itos/php/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /home/www/itos/php/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /home/www/itos/php/protected/controllers/SiteController.php(50): SiteController->render()
+#4 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/www/itos/php/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /home/www/itos/php/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/www/itos/php/public/index.php(19): CWebApplication->run()
+REQUEST_URI=/
+in /home/www/itos/php/protected/views/site/index.php (12)
+in /home/www/itos/php/protected/controllers/SiteController.php (50)
+in /home/www/itos/php/public/index.php (19)
+2015/08/03 09:58:06 [error] [php] Division by zero (/home/www/itos/php/protected/views/site/tables.php:71)
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /home/www/itos/php/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /home/www/itos/php/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /home/www/itos/php/protected/controllers/SiteController.php(65): SiteController->render()
+#4 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionTables()
+#5 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/www/itos/php/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /home/www/itos/php/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/www/itos/php/public/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/tables
+in /home/www/itos/php/protected/views/site/tables.php (71)
+in /home/www/itos/php/protected/views/site/tables.php (67)
+in /home/www/itos/php/protected/controllers/SiteController.php (65)
+2015/08/03 09:58:41 [error] [php] Division by zero (/home/www/itos/php/protected/views/site/tables.php:71)
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /home/www/itos/php/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /home/www/itos/php/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /home/www/itos/php/protected/controllers/SiteController.php(65): SiteController->render()
+#4 /home/www/itos/php/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionTables()
+#5 /home/www/itos/php/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /home/www/itos/php/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /home/www/itos/php/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /home/www/itos/php/public/index.php(19): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/tables
+in /home/www/itos/php/protected/views/site/tables.php (71)
+in /home/www/itos/php/protected/views/site/tables.php (67)
+in /home/www/itos/php/protected/controllers/SiteController.php (65)
+2015/08/03 11:02:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mobile".' in /home/www/itos/php/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/www/itos/php/yii/framework/web/CController.php(270): CController->missingAction('mobile')
+#1 /home/www/itos/php/yii/framework/web/CWebApplication.php(282): CController->run('mobile')
+#2 /home/www/itos/php/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('game/mobile')
+#3 /home/www/itos/php/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /home/www/itos/php/public/index.php(19): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=game/mobile
+---

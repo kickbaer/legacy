@@ -19,7 +19,7 @@
 
 		<?php echo $form->labelEx($model,'player1Id'); ?>
         <?php
-            
+
 	$criteria = new CDbCriteria;
 	$criteria->order = "name";
 	$user_list = CHtml::listData(Player::model()->findAll($criteria), 'id', 'name');
@@ -80,8 +80,10 @@ if (!is_object($model)){
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
-  
-  
+
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script>
+$('input, textarea, select').addClass('form-control');
+</script>
