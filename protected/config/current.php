@@ -48,7 +48,7 @@ return array(
 		),
 		*/
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/current.db',
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../../../data/current.db',
 		),
 		// uncomment the following to use a MySQL database
 		/*
