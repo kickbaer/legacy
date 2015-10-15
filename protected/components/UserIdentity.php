@@ -21,8 +21,6 @@ class UserIdentity extends CUserIdentity
 			// username => password
 			'admin'=>'kickbaer',
 		);
-    #no auth needed:
-    return true;
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif($users[$this->username]!==$this->password)
