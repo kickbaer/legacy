@@ -68,7 +68,8 @@ class GameController extends Controller
 								if(isset($_POST['Game']))
 								{
 									$model->attributes=$_POST['Game'];
-									$model->save()
+									if($model->save())
+										$this->redirect(array('Mobile');
 								}
 
 								$this->layout='mobile';
