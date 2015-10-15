@@ -185,7 +185,7 @@ $(document).ready(function() {
 
 var datasets = [];
 <?php
-asort($dataset);
+ksort($dataset);
 foreach($dataset as $playername => $data){
 echo "\ndatasets[\"$playername\"] = []";
   foreach($data as $game_id => $elo){
