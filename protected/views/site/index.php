@@ -185,6 +185,7 @@ $(document).ready(function() {
 
 var datasets = [];
 <?php
+asort($dataset);
 foreach($dataset as $playername => $data){
 echo "\ndatasets[\"$playername\"] = []";
   foreach($data as $game_id => $elo){
@@ -202,10 +203,9 @@ foreach($dataset as $playername => $data){
       // for each series.
       series:[
 <?php
-asort($dataset);
 foreach($dataset as $playername => $data){
  echo "\n{label: '$playername'},";
-}i
+}
 ?>
             // Change our line width and use a diamond shaped marker.
       ],
