@@ -26,16 +26,16 @@ foreach ($last60games as $row){
 
 $sql='SELECT * from game';
 $command=$connection->createCommand($sql);
-$games=$command->queryAll(); 
+$games=$command->queryAll();
 
 $sql='SELECT * from player';
 $command=$connection->createCommand($sql);
-$players=$command->queryAll(); 
+$players=$command->queryAll();
 
 foreach ($players as $player){
   #$ELO[$player["id"]] = $player["elo"];
   $ELO[$player["id"]] = 1500;
-  $player_name[$player["id"]] = $player["name"]; 
+  $player_name[$player["id"]] = $player["name"];
  #$dataset[$player["name"]][0] = 1500;
 }
 $message = array();
@@ -45,10 +45,10 @@ $trend = array();
 foreach ($games as $game_id => $game){
    $game["player1Id"];
    $game["player2Id"];
-   
+
    $game["player3Id"];
    $game["player4Id"];
-   
+
    $game["score1"];
    $game["score2"];
 
@@ -122,7 +122,7 @@ function ELO($Ra,$Rb,$Sa,$Sb){
  }
  $Ea = 1/(1+ Pow(10, ($diff)/400));
  $k = 30;
- #only add 
+ #only add
  $Ra = $k*($Sa - $Ea);
  return $Ra;
 // return $diff;
@@ -140,7 +140,7 @@ function getColorClass($value){
 
 $sql='SELECT * from player order by elofloat DESC';
 $command=$connection->createCommand($sql);
-$players=$command->queryAll(); 
+$players=$command->queryAll();
 ?>
 <div class="tables">
 <div class="scrollContent">
@@ -192,7 +192,7 @@ echo "\ndatasets[\"$playername\"] = []";
   }
 }
 ?>
-var plot3 = $.jqplot('chart3',[ <?php 
+var plot3 = $.jqplot('chart3',[ <?php
 foreach($dataset as $playername => $data){
  echo "datasets['$playername'],";
 }
@@ -202,10 +202,11 @@ foreach($dataset as $playername => $data){
       // for each series.
       series:[
 <?php
+asort($dataset);
 foreach($dataset as $playername => $data){
  echo "\n{label: '$playername'},";
 }i
-?>	
+?>
             // Change our line width and use a diamond shaped marker.
       ],
         legend: {
@@ -251,7 +252,7 @@ foreach($dataset as $playername => $data){
       },
       cursor: {
 	show: true,
-        zoom:true, 
+        zoom:true,
       },
       seriesDefaults: {
 	lineWidth: 1.5,
