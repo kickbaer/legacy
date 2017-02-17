@@ -31,6 +31,7 @@ function prefill($connection){
   $sql = 'SELECT * from game order by id DESC limit 3';
   $command = $connection->createCommand($sql);
   $games = $command->queryAll();
+  if (count($games)>=3){
   foreach ($games as $id => $game){
     $team1[$id][0] = $game["player1Id"];
     $team1[$id][1] = $game["player2Id"];
@@ -83,6 +84,7 @@ function prefill($connection){
   }
   */
   return $prefill;
+}
 }
 
 if (count($_POST)>0){

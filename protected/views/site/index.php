@@ -7,6 +7,7 @@ $connection=Yii::app()->db;
 
 $sql='SELECT * from game order by id DESC limit 120';
 $command=$connection->createCommand($sql);
+$last60attend=Array();
 $last60games=$command->queryAll();
 foreach ($last60games as $row){
   if (!in_array($row["player1Id"],$last60attend)){
@@ -100,7 +101,9 @@ foreach ($games as $game_id => $game){
    $dataset[$player_name[$game["player4Id"]]][$gameCounter] = $ELO[$game["player4Id"]];
    $gameCounter++;
 }
-asort($dataset);
+if (isset($dataset)){
+  asort($dataset);
+}
 foreach ($ELO as $id => $elo){
   Player::model()->updateByPk($id,array("elofloat" => $elo));
   $PIdElo[$id] = $elo;
